@@ -48,24 +48,11 @@ a:active {
 -------------------------
 <p>How to set-up:
 <ul>
-Crosshairs
-<br>Damage
-<br>Scoreboard
-<br>Medic HUD layout</ul>
-</td></p>
-
-
-
-<td width="620">
-<p>
-<br>Eniere's Improved default HUD for Team Fortress 2
-<br>April 03, 2014
-</p>
--------------------------------------------------------------------------------------------------------------
-<p>
-This is not a HUD in its usual meaning, but the some fixes for standart Team fortress 2 HUD, adding HP numbers on target IDs, small ubercharge value label near the crosshair, etc. - see screenshots for more info. I do it for myself, but maybe someone will find it useful too.
-</p>
--------------------------------------------------------------------------------------------------------------
+<a href="#crosshairs">Crosshairs</a>
+<br><a href="#damage">Damage</a>
+<br><a href="#scoreboard">Scoreboard</a>
+<br><a href="#medic">Medic HUD layout</a></ul></p>
+-------------------------
 <p>
 Contact me:
 
@@ -81,8 +68,42 @@ Contact me:
 <br><br>directly
 
 <br><a href="http://steamcommunity.com/profiles/76561198024519202">add to friends on Steam</a>
-
 </p>
+
+</td>
+
+
+
+<td width="620">
+<p>
+<br>Eniere's Improved default HUD for Team Fortress 2
+<br>April 03, 2014
+</p>
+-------------------------------------------------------------------------------------------------------------
+<p>
+This is not a HUD in its usual meaning, but the some fixes for standart Team fortress 2 HUD, adding HP numbers on target IDs, small ubercharge value label near the crosshair, etc. - see screenshots for more info. I do it for myself, but maybe someone will find it useful too.
+</p>
+
+-------------------------------------------------------------------------------------------------------------
+<br><p><h4><a name="crosshairs">How to turn on/off crosshairs/hitmarker</a></h4>
+To disable the hitmarker, open scripts\hudlayout.res, then CTRL+F for "3.1" and change "visible" and "visible_minmode" parameter values to "0".
+</p>
+
+
+<p><h4><a name="damage">How to change damage position and visibility</a></h4>
+To enable alternative layouts, just rename huddamageaccount_yellow.res or huddamageaccount_m0re.res to huddamageaccount.res (placed in resource\ui\ folder).</p>
+
+
+<p><h4><a name="scoreboard">How to change scoreboard layout</a></h4>
+6v6 version is enabled by default when cl_hud_minmode 1. To disable, just delete scoreboard.res file placed in resource\ui\ folder.</p>
+
+
+<p><h4><a name="medic">How to change Medic HUD layout</a></h4>
+To enable, just rename hudmediccharge_alt.res to hudmediccharge.res (placed in resource\ui\ folder) AND rename hudanimations_tf_alt.txt to hudanimations_tf.txt (placed in scripts\ folder). <em>Not recommended to use with Vaccinator.</em></p>
+
+
+
+
 
 </td>
 </tr>
