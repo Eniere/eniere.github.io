@@ -86,12 +86,85 @@ This is not a HUD in its usual meaning, but the some fixes for standart Team for
 
 -------------------------------------------------------------------------------------------------------------
 <br><p><h4><a name="crosshairs">How to turn on/off crosshairs/hitmarker</a></h4>
-To disable the hitmarker, open scripts\hudlayout.res, then CTRL+F for "3.1" and change "visible" and "visible_minmode" parameter values to "0".
+<p>Used files:
+<br><em>scripts\hudlayout.res
+<br>resource\clientscheme.res</em></p>
+<p>The default file structure looks like:</p>
+<ul>
+Cross //1.1 ...................... name and number you looking for
+<br>{
+<br>"controlName"	"CExLabel" ......... do not change
+<br>"fieldName"	"Cross" .............. do not change
+<br>"visible"	"0" .................... "1" to enable, "0" to disable
+<br>"enabled"	"1" .................... do not change
+<br>"zpos"	"2" ....................... Z axis (use it when multiple xhairs enabled)
+<br>"xpos"	"c-25" .................... X axis from center of screen
+<br>"ypos"	"c-26" .................... Y axis from center of screen
+<br>"wide"	"50" ...................... use it for more accurate X axis positioning if needed
+<br>"tall"	"49" ...................... use it for more accurate Y axis positioning if needed
+<br>"font"	"CrosshairsOutline16" ..... used font parameter (look for avalable fonts in clientscheme.res)
+<br>"labelText"	"a" .................. do not change
+<br>"textAlignment"	"center" ......... do not change
+<br>"fgcolor"	"255 255 255 255" ...... RGBA (Red, Green, Blue, Alpha) color (0 min, 255 max)
+<br>}
+</ul>
+For example, let's do yellow crosshair, enabled only in minmode. So we need to add/change some parameters:
+
+<ul>
+"visible"	"0" .................... now it will be disabled when cl_hud_minmode "0"
+<br>"visible_minmode"	"1" ............ you can use "_minmode" with any parameter you want
+<br>"fgcolor"	"255 255 0 255" ........ because red+green=yellow in RGB color model
+</ul>
+
+To enable the custom crosshair(s), open open scripts\hudlayout.res, then CTRL+F for needed number from table and change "visible" and/or "visible_minmode" parameter values to "1". Then you can calibrate xhair positions with "xpos", "ypos" and "wide", "tall" too.
+<p>To disable the hitmarker, open scripts\hudlayout.res, then CTRL+F for "3.1" and change "visible" and "visible_minmode" parameter values to "0".
 </p>
 
 
 <p><h4><a name="damage">How to change damage position and visibility</a></h4>
-To enable alternative layouts, just rename huddamageaccount_yellow.res or huddamageaccount_m0re.res to huddamageaccount.res (placed in resource\ui\ folder).</p>
+<p>Used files:
+<br><em>resource\ui\huddamageaccount.res
+<br>resource\ui\huddamageaccount_4x3.res
+<br>resource\ui\huddamageaccount_16x10.res
+<br>resource\ui\huddamageaccount_m0re.res
+<br>resource\ui\huddamageaccount_yellow_4x3.res
+<br>resource\ui\huddamageaccount_yellow_16x9.res
+<br>resource\ui\huddamageaccount_yellow_16x10.res
+</em></p>
+<p>The default file structure looks like:</p>
+<ul>
+	"CDamageAccountPanel" .................... damage/healing numbers near the enemy
+<br>	{
+<br>		"fieldName"				"CDamageAccountPanel"
+<br>		"text_x"				"0" ............................. do not change
+<br>		"text_y"				"0" ............................. do not change
+<br>		"delta_item_end_y"		"0" ................... do not change
+<br>		"PositiveColor"			"255 255 50 255" ......... damage colour (RGBA)
+<br>		"NegativeColor"			"50 255 50 255" .......... healing colour (RGBA)
+<br>		"delta_lifetime"		"3.0" ................... how long last damage numbers stay visible on screen
+<br>		"delta_item_font"		"DefaultOutline" ....... font used for damage numbers near the enemy
+<br>		"delta_item_font_big"	"DefaultOutline" ... font used for much damage done
+<br>	}
+<br><br>	"CDamageAccountValue" .................... damage/healing numbers near the health
+<br>	{
+<br>		"ControlName"			"CExLabel"
+<br>		"fieldName"				"CDamageAccountValue"
+<br>		"fgcolor"				"255 255 50 255" ............... RGBA color 
+<br>		"font"					"HudFontBiggerBold" ............... used font parameter
+<br>		"xpos"					"c-302" ........................... X axis from center of screen
+<br>		"ypos"					"r110" ............................ Y axis from right
+<br>		"xpos_minmode"			"c-316" ................... X axis from center of screen (minmode)
+<br>		"ypos_minmode"			"r75" ..................... Y axis from right (minmode)
+<br>		"zpos"					"2" ............................... Z axis
+<br>		"wide"					"100" ............................. box wide (change when damage value looks "cropped"
+<br>		"tall"					"26" .............................. box height (change when damage value looks "cropped"
+<br>		"visible"				"1" ............................ visibility parameter
+<br>		"enabled"				"1" ............................ do not change 
+<br>		"labelText"				"%metal%" .................... do not change 
+<br>		"textAlignment"			"left"
+</ul>
+<p>To enable alternative damage layouts, just rename huddamageaccount_yellow.res or huddamageaccount_m0re.res to huddamageaccount.res (placed in resource\ui\ folder). "4x3", "16x9" and "16x10" means screen aspect ratio used to calibrate positioning.</p>
+
 
 
 <p><h4><a name="scoreboard">How to change scoreboard layout</a></h4>
