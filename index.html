@@ -25,19 +25,35 @@ a:active {
 	color: #00F;
 }
 </style>
+  <style type="text/css">
+   TABLE {
+    width: 1000px;
+   }
+   #col1 {
+    width: 20%;
+    vertical-align: top; 
+   }
+   #col2 {
+    width: 80%;
+    vertical-align: top; 
+   }
+  </style>
+
 </head>
 
 <body style="height:100%; width=100%; margin: 0px;">
-<p><center><strong>Improved default HUD</strong>
-<br>2.0.5</p>
+<p><center><strong>Eniere's Improved default HUD for Team Fortress 2</strong></p>
 
 
 </center>
 <div align="center">
   <table width="1020" border="0">
     <tr>
-      <td width="200" align="left"><p><a href="https://github.com/Eniere/idhud">Download</a> (direct link)
-<br><a href="https://github.com/Eniere/idhud">Download</a> files separately</p>
+      <td id="col1">
+
+<p><br><a href="https://github.com/Eniere/idhud">Download</a> (direct link)
+<br><a href="https://github.com/Eniere/idhud">Download</a> files separately
+<br><br><a href="#changelog">Changelog</a></p>
 
 -------------------------
 <p><a href="http://imgur.com/a/lKTpY ">Screenshots</a>
@@ -74,46 +90,46 @@ Contact me:
 
 
 
-<td width="620">
+<td id="col2">
 <p>
-<br>Eniere's Improved default HUD for Team Fortress 2
-<br>April 03, 2014
+<br>Last update: April 04, 2014
+<br>Latest version: 2.0.5
 </p>
--------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 <p>
 This is not a HUD in its usual meaning, but the some fixes for standart Team fortress 2 HUD, adding HP numbers on target IDs, small ubercharge value label near the crosshair, etc. - see screenshots for more info. I do it for myself, but maybe someone will find it useful too.
 </p>
 
--------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 <br><p><h4><a name="crosshairs">How to turn on/off crosshairs/hitmarker</a></h4>
 <p>Used files:
 <br><em>scripts\hudlayout.res
 <br>resource\clientscheme.res</em></p>
 <p>The default file structure looks like:</p>
 <ul>
-Cross //1.1 ...................... name and number you looking for
+Cross //1.1 .............................. name and number you looking for
 <br>{
-<br>"controlName"	"CExLabel" ......... do not change
-<br>"fieldName"	"Cross" .............. do not change
-<br>"visible"	"0" .................... "1" to enable, "0" to disable
-<br>"enabled"	"1" .................... do not change
-<br>"zpos"	"2" ....................... Z axis (use it when multiple xhairs enabled)
-<br>"xpos"	"c-25" .................... X axis from center of screen
-<br>"ypos"	"c-26" .................... Y axis from center of screen
-<br>"wide"	"50" ...................... use it for more accurate X axis positioning if needed
-<br>"tall"	"49" ...................... use it for more accurate Y axis positioning if needed
-<br>"font"	"CrosshairsOutline16" ..... used font parameter (look for avalable fonts in clientscheme.res)
-<br>"labelText"	"a" .................. do not change
-<br>"textAlignment"	"center" ......... do not change
-<br>"fgcolor"	"255 255 255 255" ...... RGBA (Red, Green, Blue, Alpha) color (0 min, 255 max)
+<br>"controlName"	"CExLabel" ................. do not change
+<br>"fieldName"	"Cross" ...................... do not change
+<br>"visible"	"0" ............................ "1" to enable, "0" to disable
+<br>"enabled"	"1" ............................ do not change
+<br>"zpos"	"2" ............................... Z axis (use it when multiple xhairs enabled)
+<br>"xpos"	"c-25" ............................ X axis from center of screen
+<br>"ypos"	"c-26" ............................ Y axis from center of screen
+<br>"wide"	"50" .............................. use it for more accurate X axis positioning if needed
+<br>"tall"	"49" .............................. use it for more accurate Y axis positioning if needed
+<br>"font"	"CrosshairsOutline16" ............. used font parameter (look for avalable fonts in clientscheme.res)
+<br>"labelText"	"a" .......................... do not change
+<br>"textAlignment"	"center" ................. do not change
+<br>"fgcolor"	"255 255 255 255" .............. RGBA (Red, Green, Blue, Alpha) color (0 min, 255 max)
 <br>}
 </ul>
-For example, let's do yellow crosshair, enabled only in minmode. So we need to add/change some parameters:
+For example, let's do yellow crosshair, enabled only in minmode. So we're need to add/change some parameters:
 
 <ul>
-"visible"	"0" .................... now it will be disabled when cl_hud_minmode "0"
-<br>"visible_minmode"	"1" ............ you can use "_minmode" with any parameter you want
-<br>"fgcolor"	"255 255 0 255" ........ because red+green=yellow in RGB color model
+"visible"	"0" ............................ now it will be disabled when cl_hud_minmode "0"
+<br>"visible_minmode"	"1" .................... you can use "_minmode" with any parameter you want
+<br>"fgcolor"	"255 255 0 255" ................ because red+green=yellow in RGB color model
 </ul>
 
 To enable the custom crosshair(s), open open scripts\hudlayout.res, then CTRL+F for needed number from table and change "visible" and/or "visible_minmode" parameter values to "1". Then you can calibrate xhair positions with "xpos", "ypos" and "wide", "tall" too.
@@ -135,53 +151,114 @@ To enable the custom crosshair(s), open open scripts\hudlayout.res, then CTRL+F 
 <ul>
 	"CDamageAccountPanel" .................... damage/healing numbers near the enemy
 <br>	{
-<br>		"fieldName"				"CDamageAccountPanel"
-<br>		"text_x"				"0" ............................. do not change
-<br>		"text_y"				"0" ............................. do not change
+<br>		"fieldName"			"CDamageAccountPanel"
+<br>		"text_x"			"0" ............................. do not change
+<br>		"text_y"			"0" ............................. do not change
 <br>		"delta_item_end_y"		"0" ................... do not change
 <br>		"PositiveColor"			"255 255 50 255" ......... damage colour (RGBA)
 <br>		"NegativeColor"			"50 255 50 255" .......... healing colour (RGBA)
 <br>		"delta_lifetime"		"3.0" ................... how long last damage numbers stay visible on screen
 <br>		"delta_item_font"		"DefaultOutline" ....... font used for damage numbers near the enemy
-<br>		"delta_item_font_big"	"DefaultOutline" ... font used for much damage done
+<br>		"delta_item_font_big"		"DefaultOutline" ... font used for much damage done
 <br>	}
 <br><br>	"CDamageAccountValue" .................... damage/healing numbers near the health
 <br>	{
 <br>		"ControlName"			"CExLabel"
-<br>		"fieldName"				"CDamageAccountValue"
-<br>		"fgcolor"				"255 255 50 255" ............... RGBA color 
-<br>		"font"					"HudFontBiggerBold" ............... used font parameter
-<br>		"xpos"					"c-302" ........................... X axis from center of screen
-<br>		"ypos"					"r110" ............................ Y axis from right
+<br>		"fieldName"			"CDamageAccountValue"
+<br>		"fgcolor"			"255 255 50 255" ............... RGBA color 
+<br>		"font"				"HudFontBiggerBold" ............... used font parameter
+<br>		"xpos"				"c-302" ........................... X axis from center of screen
+<br>		"ypos"				"r110" ............................ Y axis from right
 <br>		"xpos_minmode"			"c-316" ................... X axis from center of screen (minmode)
 <br>		"ypos_minmode"			"r75" ..................... Y axis from right (minmode)
-<br>		"zpos"					"2" ............................... Z axis
-<br>		"wide"					"100" ............................. box wide (change when damage value looks "cropped"
-<br>		"tall"					"26" .............................. box height (change when damage value looks "cropped"
-<br>		"visible"				"1" ............................ visibility parameter
-<br>		"enabled"				"1" ............................ do not change 
-<br>		"labelText"				"%metal%" .................... do not change 
-<br>		"textAlignment"			"left"
+<br>		"zpos"				"2" ............................... Z axis
+<br>		"wide"				"100" ............................. box wide (change when damage value looks "cropped"
+<br>		"tall"				"26" .............................. box height (change when damage value looks "cropped"
+<br>		"visible"			"1" ............................ visibility parameter
+<br>		"enabled"			"1" ............................ do not change 
+<br>		"labelText"			"%metal%" .................... do not change 
+<br>		"textAlignment"			"left" ................... do not change 
+<br>}
 </ul>
 <p>To enable alternative damage layouts, just rename huddamageaccount_yellow.res or huddamageaccount_m0re.res to huddamageaccount.res (placed in resource\ui\ folder). "4x3", "16x9" and "16x10" means screen aspect ratio used to calibrate positioning.</p>
 
 
-
 <p><h4><a name="scoreboard">How to change scoreboard layout</a></h4>
-6v6 version is enabled by default when cl_hud_minmode 1. To disable, just delete scoreboard.res file placed in resource\ui\ folder.</p>
+<p>Used files:
+<br><em>resource\ui\scoreboard.res
+<br>resource\ui\scoreboard_6v6.res
+<br>resource\ui\scoreboard_640x480.res
+</em></p>
+<p>All you need to know:</p>
+By default, 6v6 table enabled only when cl_hud_minmode "1". Scoreboard_6v6.res contains 6v6 table for both minmode parameters, so it works when cl_hud_minmode "0" and "1". Scoreboard_640x480.res is a special version of scoreboard.res, optimised for using on low screen resolution.
+If you don't need 6v6 table anyway and wants to see default one, so just delete scoreboard.res file placed in resource\ui\ folder.</p>
 
 
 <p><h4><a name="medic">How to change Medic HUD layout</a></h4>
-To enable, just rename hudmediccharge_alt.res to hudmediccharge.res (placed in resource\ui\ folder) AND rename hudanimations_tf_alt.txt to hudanimations_tf.txt (placed in scripts\ folder). <em>Not recommended to use with Vaccinator.</em></p>
+<p>Used files:
+<br><em>resource\ui\hudmediccharge.res
+<br>resource\ui\hudmediccharge_alt_4x3.res
+<br>resource\ui\hudmediccharge_alt_16x9.res
+<br>resource\ui\hudmediccharge_alt_16x10.res
+<br>resource\ui\hudmediccharge_alt_combined_16x9.res
+<br>scripts\hudanimations_tf.txt
+<br>scripts\hudanimations_tf_alt.txt
+<br>scripts\hudanimations_tf_alt_combined.txt
+</em></p>
+<p>So, what's in the box?</p>
+
+By default, the small ubercharge value placed near the crosshair and default uberbar/value saved at their regular positions too. In hudmediccharge_alt.res you can find bigger ubercharge value replaces the default one. Also, here is combined layout too, with bigger default ubercharge/value replacement and small ubercharge value under the crosshair.
+
+Hudanimations files used for better supporting new layouts, adding more conspicuous colors when ubercharge is ready <strike>to drop</strike>.</p>
+
+<p><em>Not recommended to use with Vaccinator.</em></p>
 
 
+------------------------------------------------------------------------------------
+<p><h4><a name="changelog">Changelog</a></h4>
 
+<p>
+v2.0.5 March 30, 2014
+<br>+ crosshairs are combined into one file (<em>thanks to skappa</em>);
+<br>- removed black bars from spectator UI;
+<br>- some minor improvements.
+</p>
 
+<p>
+v2.0.4 March 26, 2014
+<br>+ new combined ubercharge layout;
+<br>- some minor improvements.
+</p>
+
+<p>
+v2.0.3 March 24, 2014
+<br>+ added a separate version of 6v6 scoreboard. Now you can use it with cl_hud_minmode 0 too;
+<br>+ huddamageaccount.res now supports 16:10 and 4:3 aspect ratio;
+<br>+ huddamageaccount_yellow.res now supports 16:10 and 4:3 aspect ratio;
+<br>+ hudmediccharge_alt.res now supports 16:10 and 4:3 aspect ratio;
+<br>- res files was cleared from unused X360 code;
+<br>- color scheme fix;
+<br>- some minor improvements.
+</p>
+
+<p>
+v2.0.2 March 23, 2014
+<br>- bugfixes.
+</p>
+
+<p>
+v2.0.1 March 22, 2014
+<br>+ added 2 alternative damage layouts: bold yellow and m0re's (see pic descriptions);
+<br>+ new alternative medic's ubercharge position and layout.
+</p>
+
+<p>
+v2.0.0 March 21, 2014 "General release"
+</p>
 
 </td>
 </tr>
 </table>
 </div>
-
 </body>
 </html>
