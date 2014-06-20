@@ -89,8 +89,8 @@ Contact me:
 
 <td id="col2">
 <p>
-<br>Last update: June 1, 2014
-<br>Current version: 2.0.8
+<br>Last update: June 20, 2014
+<br>Current version: 2.0.9
 </p>
 ------------------------------------------------------------------------------------
 <p>
@@ -185,28 +185,24 @@ To enable the custom crosshair(s), open open scripts\hudlayout.res, then CTRL+F 
 <p><h4><a name="scoreboard">How to change scoreboard layout</a></h4>
 <p>Used files:
 <br><em>resource\ui\scoreboard.res
-<br>resource\ui\scoreboard_6v6.res
-<br>resource\ui\scoreboard_640x480.res
 </em></p>
 <p>All you need to know:</p>
-By default, 6v6 table enabled only when cl_hud_minmode "1". Scoreboard_6v6.res contains 6v6 table for both minmode parameters, so it works when cl_hud_minmode "0" and "1". Scoreboard_640x480.res is a special version of scoreboard.res, optimised for using on low screen resolution.
+By default, 6v6 table enabled only when cl_hud_minmode "1". Scoreboard_6v6.res contains 6v6 table for both minmode parameters, so it works when cl_hud_minmode "0" and "1" (now removed from HUD). Scoreboard_640x480.res is a special version of scoreboard.res, optimized for using on low screen resolution (removed too).
 If you don't need 6v6 table anyway and wants to see default one, so just delete scoreboard.res file placed in resource\ui\ folder.</p>
 
 
 <p><h4><a name="medic">How to change Medic HUD layout</a></h4>
 <p>Used files:
 <br><em>resource\ui\hudmediccharge.res
-<br>resource\ui\hudmediccharge_alt_4x3.res
-<br>resource\ui\hudmediccharge_alt_16x9.res
-<br>resource\ui\hudmediccharge_alt_16x10.res
-<br>resource\ui\hudmediccharge_alt_combined_16x9.res
+<br>resource\ui\hudmediccharge_large.res
+<br>resource\ui\hudmediccharge_underxhair.res
 <br>scripts\hudanimations_tf.txt
-<br>scripts\hudanimations_tf_alt.txt
-<br>scripts\hudanimations_tf_alt_combined.txt
+<br>scripts\hudanimations_tf_large.txt
+<br>scripts\hudanimations_tf_underxhair.txt
 </em></p>
 <p>So, what's in the box?</p>
 
-By default, the small ubercharge value placed near the crosshair and default uberbar/value saved at their regular positions too. In hudmediccharge_alt.res you can find bigger ubercharge value replaces the default one. Also, here is combined layout too, with bigger default ubercharge/value replacement and small ubercharge value under the crosshair.
+In the hudmediccharge_underxhair.res a small ubercharge value placed near the crosshair and default uberbar/value saved at their regular positions too. In hudmediccharge_large.res you can find bigger ubercharge value replaces the default one. Also, here is combined layout too, enabled by default, with bigger ubercharge/value replacement and small ubercharge value under the crosshair.
 
 Hudanimations files used for better supporting new layouts, adding more conspicuous colors when ubercharge is ready <strike>to drop</strike>.</p>
 
@@ -215,6 +211,14 @@ Hudanimations files used for better supporting new layouts, adding more conspicu
 
 ------------------------------------------------------------------------------------
 <p><h4><a name="changelog">Changelog</a></h4>
+
+<p>
+v2.0.9 June 20, 2014
+<br>+ Reworked scoreboard;
+<br>+ Support for multi-taunts;
+<br>+ Alternative medic charge layout now independent from screen aspect ratio;
+<br>- Removed some unused files.
+</p>
 
 <p>
 v2.0.8 June 1, 2014
