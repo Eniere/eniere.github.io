@@ -89,8 +89,8 @@ Contact me:
 
 <td id="col2">
 <p>
-<br>Last update: October 1, 2014
-<br>Current version: 2.1
+<br>Last update: October 31, 2014
+<br>Current version: 2.2
 </p>
 ------------------------------------------------------------------------------------
 <p>
@@ -132,19 +132,20 @@ For example, let's do yellow crosshair, enabled only in minmode. So we're need t
 </ul>
 
 To enable the custom crosshair(s), open open scripts\hudlayout.res, then CTRL+F for needed number from table and change "visible" and/or "visible_minmode" parameter values to "1". Then you can calibrate xhair positions with "xpos", "ypos" and "wide", "tall" too.
-<p>To disable the hitmarker, open scripts\hudlayout.res, then CTRL+F for "3.1" and change "visible" and "visible_minmode" parameter values to "0".
+<p>To enable the hitmarker (damage indicator), open scripts\hudlayout.res, then CTRL+F for "3.1" and change "visible" and "visible_minmode" parameter values to "1".
 </p>
 
 
 <p><h4><a name="damage">How to change damage position and visibility</a></h4>
 <p>Used files:
 <br><em>resource\ui\huddamageaccount.res
-<br>resource\ui\alternative_files\huddamageaccount_4x3.res
-<br>resource\ui\alternative_files\huddamageaccount_16x10.res
-<br>resource\ui\alternative_files\huddamageaccount_m0re.res
-<br>resource\ui\alternative_files\huddamageaccount_yellow_4x3.res
-<br>resource\ui\alternative_files\huddamageaccount_yellow_16x9.res
-<br>resource\ui\alternative_files\huddamageaccount_yellow_16x10.res
+<br>alternative_files\resource\ui\huddamageaccount_4x3.res
+<br>alternative_files\resource\ui\huddamageaccount_16x10.res
+<br>alternative_files\resource\ui\huddamageaccount_m0re.res
+<br>alternative_files\resource\ui\huddamageaccount_defaultbold.res
+<br>alternative_files\resource\ui\huddamageaccount_yellow_4x3.res
+<br>alternative_files\resource\ui\huddamageaccount_yellow_16x9.res
+<br>alternative_files\resource\ui\huddamageaccount_yellow_16x10.res
 </em></p>
 <p>The default file structure looks like:</p>
 <ul>
@@ -179,26 +180,26 @@ To enable the custom crosshair(s), open open scripts\hudlayout.res, then CTRL+F 
 <br>		"textAlignment"			"left"
 <br>}
 </ul>
-<p>To enable alternative damage layouts, just rename huddamageaccount_yellow.res or huddamageaccount_m0re.res to huddamageaccount.res (placed in resource\ui\ folder). "4x3", "16x9" and "16x10" means screen aspect ratio used to calibrate positioning.</p>
+<p>To enable alternative damage layouts, just rename liked to huddamageaccount.res and put it in the resource\ui\ folder. "4x3", "16x9" and "16x10" means screen aspect ratio used to calibrate positioning.</p>
 
 
 <p><h4><a name="scoreboard">How to change scoreboard layout</a></h4>
 <p>Used files:
 <br><em>resource\ui\scoreboard.res
+<br>alternative_files\resource\ui\scoreboard_prev.res
 </em></p>
 <p>All you need to know:</p>
-By default, 6v6 table enabled only when cl_hud_minmode "1". Scoreboard_6v6.res contains 6v6 table for both minmode parameters, so it works when cl_hud_minmode "0" and "1" (now removed from HUD). Scoreboard_640x480.res is a special version of scoreboard.res, optimized for using on low screen resolution (removed too).
-If you don't need 6v6 table anyway and wants to see default one, so just delete scoreboard.res file placed in resource\ui\ folder.</p>
+Scoreboard.res contains 6v6 table for both minmode parameters, you can switch between by using cl_hud_minmode "0"/"1". 
+If you don't need 6v6 table and wants to see default one, so just delete scoreboard.res file placed in resource\ui\ folder.</p>
 
 
 <p><h4><a name="medic">How to change Medic HUD layout</a></h4>
 <p>Used files:
 <br><em>resource\ui\hudmediccharge.res
-<br>resource\ui\alternative_files\hudmediccharge_largeonly.res
-<br>resource\ui\alternative_files\hudmediccharge_underxhaironly.res
+<br>alternative_files\resource\ui\hudmediccharge_largeonly.res
+<br>alternative_files\resource\ui\hudmediccharge_underxhaironly.res
 <br>scripts\hudanimations_tf.txt
-<br>scripts\alternative_files\hudanimations_tf_largeonly.txt
-<br>scripts\alternative_files\hudanimations_tf_underxhaironly.txt
+<br>alternative_files\scripts\hudanimations_tf_underxhaironly.txt
 </em></p>
 <p>So, what's in the box?</p>
 
@@ -211,6 +212,16 @@ Hudanimations files used for better supporting new layouts, adding more conspicu
 
 ------------------------------------------------------------------------------------
 <p><h4><a name="changelog">Changelog</a></h4>
+
+<p>
+v2.2 (October 31, 2014) 
+<br>+ New TargetID system <a href="http://imgur.com/a/lKTpY#12">support</a>. HP values on IDs now colored by default.
+<br>+ New scoreboard.res that have <a href="http://i.imgur.com/5jMVJL3.jpg">6v6</a> and <a href="http://i.imgur.com/Vj3Qq5p.jpg">13v13</a> layouts. Use cl_hud_minmode 1/0 to switch between.
+<br>+ Small medic uber percentage indicator <a href="http://i.imgur.com/uCIxD3K.jpg">moved closer</a> to crosshair.
+<br>* Updated hudlayout.res for latest tf2 updates support (targetID, minigames hud, etc.)
+<br>* Updated clientscheme.res for "Limited" item quality support.
+<br>* Another minor changes.
+</p>
 
 <p>
 v2.1 October 1, 2014
